@@ -1,0 +1,6 @@
+{
+  "DatabaseSettings": {
+    "DBProvider": "mssql",
+    "ConnectionString": "Server=event-grid-poc-db-server.database.windows.net;Initial Catalog=authController;User ID=admin001;Password=Insomnia$1;TrustServerCertificate=True;"
+  }
+}
