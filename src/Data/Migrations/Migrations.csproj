@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <NoWarn>RCS1021;IDE0161;RCS1205</NoWarn>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\Infrastructure\Infrastructure.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+    </ItemGroup>
+</Project>

@@ -1,0 +1,96 @@
+# Git
+.git
+.gitignore
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# .NET artifacts
+**/bin/
+**/obj/
+**/.vs/
+**/*.user
+
+# MSTest test results
+TestResults/
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio cache/options directory
+.vs/
+
+# Test results
+TestResults/
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# macOS files
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE files
+*.swp
+*.swo
+*~
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Certificate files
+*.pfx
+*.p12
+*.crt
+*.pem
+
+# Log files
+Logs/
+*.log

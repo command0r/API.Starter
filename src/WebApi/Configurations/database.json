@@ -1,0 +1,6 @@
+{
+  "DatabaseSettings": {
+    "DBProvider": "postgresql",
+    "ConnectionString": "Host=localhost;Database=TenantDb;Username=postgres;Password=root;Include Error Detail=true"
+  }
+}

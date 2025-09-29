@@ -1,0 +1,130 @@
+/* Custom CSS for professional Swagger UI branding */
+
+/* Hide the default Swagger logo */
+.swagger-ui .topbar-wrapper .link img {
+    display: none;
+}
+
+/* Hide the default "swagger" text */
+.swagger-ui .topbar-wrapper .link span {
+    display: none;
+}
+
+/* Style the topbar wrapper - keep original layout */
+.swagger-ui .topbar-wrapper {
+    padding: 10px 0;
+}
+
+/* Custom branding container */
+.swagger-ui .topbar-wrapper .link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    margin-left: calc(50% - 730px + 20px); /* Align with main content left edge */
+}
+
+/* Commandor icon styling */
+.swagger-ui .topbar-wrapper .link::before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-image: url('/Files/commandor.ico');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 6px;
+    margin-right: 12px;
+}
+
+/* API STARTER text */
+.swagger-ui .topbar-wrapper .link::after {
+    content: "API STARTER";
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Hide the info section with unwanted text */
+.swagger-ui .info {
+    display: none;
+}
+
+/* Style the main content area */
+.swagger-ui .swagger-container {
+    padding-top: 0;
+}
+
+/* ============ ADVANCED THEME CUSTOMIZATIONS ============ */
+
+/* Custom HTTP method colors */
+.swagger-ui .opblock.opblock-get .opblock-summary-method {
+    background: #28a745; /* Green for GET */
+}
+
+.swagger-ui .opblock.opblock-post .opblock-summary-method {
+    background: #007bff; /* Blue for POST */
+}
+
+.swagger-ui .opblock.opblock-put .opblock-summary-method {
+    background: #fd7e14; /* Orange for PUT */
+}
+
+.swagger-ui .opblock.opblock-delete .opblock-summary-method {
+    background: #dc3545; /* Red for DELETE */
+}
+
+.swagger-ui .opblock.opblock-patch .opblock-summary-method {
+    background: #6f42c1; /* Purple for PATCH */
+}
+
+/* Custom operation block styling */
+.swagger-ui .opblock {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.swagger-ui .opblock .opblock-summary {
+    padding: 15px 20px;
+}
+
+/* Custom response section styling */
+.swagger-ui .responses-inner h4,
+.swagger-ui .responses-inner h5 {
+    color: #495057;
+    font-weight: 600;
+}
+
+/* Hide "Try it out" buttons to disable execution */
+.swagger-ui .try-out__btn {
+    display: none;
+}
+
+/* Custom parameter styling */
+.swagger-ui .parameters-col_description p {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* Custom model styling */
+.swagger-ui .model-box {
+    background: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+/* Add curl command styling (when visible) */
+.swagger-ui .curl-command {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 12px;
+    border-radius: 6px;
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 13px;
+    margin: 10px 0;
+}

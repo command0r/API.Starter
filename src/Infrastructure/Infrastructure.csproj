@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>API.Starter.Infrastructure</RootNamespace>
+        <AssemblyName>API.Starter.Infrastructure</AssemblyName>
+    </PropertyGroup>
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Ardalis.Specification.EntityFrameworkCore" />
+        <PackageReference Include="ClosedXML" />
+        <PackageReference Include="Finbuckle.MultiTenant.AspNetCore" />
+        <PackageReference Include="Finbuckle.MultiTenant.EntityFrameworkCore" />
+        <PackageReference Include="Hangfire" />
+        <PackageReference Include="Hangfire.Console" />
+        <PackageReference Include="Hangfire.Console.Extensions" />
+        <PackageReference Include="Hangfire.PostgreSql" />
+        <PackageReference Include="Hangfire.Dashboard.Basic.Authentication" />
+        <PackageReference Include="MailKit" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" />
+        <PackageReference Include="Microsoft.AspNetCore.SignalR.StackExchangeRedis" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" />
+        <PackageReference Include="Microsoft.Identity.Web" />
+        <PackageReference Include="MimeKit" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+        <PackageReference Include="NSwag.AspNetCore" />
+        <PackageReference Include="RazorEngineCore" />
+        <PackageReference Include="Serilog.Enrichers.Process" />
+        <PackageReference Include="Serilog.Enrichers.Thread" />
+        <PackageReference Include="Serilog.Expressions" />
+        <PackageReference Include="Serilog.Enrichers.Environment" />
+        <PackageReference Include="Serilog.Extensions.Hosting" />
+        <PackageReference Include="Serilog.Formatting.Compact" />
+        <PackageReference Include="Serilog.Settings.Configuration" />
+        <PackageReference Include="Serilog.Sinks.Async" />
+        <PackageReference Include="Serilog.Sinks.Console" />
+        <PackageReference Include="Serilog.Sinks.File" />
+        <PackageReference Include="Serilog.Sinks.Elasticsearch" />
+        <PackageReference Include="Serilog.Sinks.Seq" />
+        <PackageReference Include="System.Linq.Dynamic.Core" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Core\Application\Application.csproj" />
+        <ProjectReference Include="..\Core\Domain\Domain.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Update="Catalog\*.json" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+</Project>

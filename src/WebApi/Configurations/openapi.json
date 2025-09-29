@@ -1,0 +1,14 @@
+{
+  "SwaggerSettings": {
+    "Enable": true,
+    "Title": ".NET 6.0 WebAPI - Clean Architecture",
+    "Version": "v1",
+    "Description": ".NET 6.0 WebAPI Framework",
+    "ContactName": "John Doe",
+    "ContactEmail": "jd@test.com",
+    "ContactUrl": "",
+    "License": true,
+    "LicenseName": "MIT License",
+    "LicenseUrl": ""
+  }
+}

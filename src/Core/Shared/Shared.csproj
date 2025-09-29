@@ -1,0 +1,7 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>API.Starter.Shared</RootNamespace>
+        <AssemblyName>API.Starter.Shared</AssemblyName>
+    </PropertyGroup>
+</Project>

@@ -1,0 +1,32 @@
+# Global code owners
+* @commandor
+
+# Core domain and application layers
+/src/Core/ @commandor
+
+# Infrastructure layer
+/src/Infrastructure/ @commandor
+
+# API layer
+/src/WebApi/ @commandor
+
+# Database migrations
+/src/Data/Migrations/ @commandor
+
+# Configuration files
+Directory.Build.props @commandor
+Directory.Packages.props @commandor
+global.json @commandor
+.editorconfig @commandor
+dotnet.ruleset @commandor
+stylecop.json @commandor
+
+# CI/CD and deployment
+/.github/ @commandor
+/scripts/ @commandor
+Dockerfile @commandor
+docker-compose*.yml @commandor
+
+# Documentation
+README.md @commandor
+/docs/ @commandor

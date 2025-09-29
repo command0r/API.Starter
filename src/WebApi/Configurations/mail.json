@@ -1,0 +1,10 @@
+{
+  "MailSettings": {
+    "DisplayName": "John Doe",
+    "From": "jd@test.net",
+    "Host": "smtp.ethereal.email",
+    "Password": "vAKmWQB8CyPUBg8rBQ",
+    "Port": 587,
+    "UserName": "test0528@ethereal.email"
+  }
+}
