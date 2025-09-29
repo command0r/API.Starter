@@ -118,11 +118,11 @@ The solution follows Clean Architecture principles with clear dependency flow:
 ### Prerequisites
 
 - **.NET 8 SDK** or later
-- **PostgreSQL** database server
-- **Redis** server (optional, for caching and SignalR backplane)
-- **Docker** (optional, for containerized dependencies)
+- **Docker & Docker Compose** (recommended for dependencies)
+- **PostgreSQL** database (provided via Docker)
+- **Redis** server (optional, for caching - provided via Docker)
 
-### Quick Start
+### Quick Start with Docker
 
 1. **Clone the repository**
    ```bash
@@ -130,32 +130,68 @@ The solution follows Clean Architecture principles with clear dependency flow:
    cd API.Starter
    ```
 
-2. **Restore dependencies**
+2. **Start all services with Docker Compose**
    ```bash
-   dotnet restore
-   # For detailed restore logs
-   dotnet restore --verbosity normal
+   cd deployments
+   docker-compose up -d
+   ```
+   This starts PostgreSQL, Seq logging, and the API in containers.
+
+3. **Access the application**
+   - **API**: `http://localhost:8080` (HTTP) / `https://localhost:8081` (HTTPS)
+   - **Swagger UI**: `http://localhost:8080/swagger`
+   - **Seq Logs**: `http://localhost:5341`
+
+### Local Development (IDE)
+
+When developing locally with your IDE (Visual Studio, Rider, VS Code):
+
+1. **Start only infrastructure services**
+   ```bash
+   cd deployments
+   # Stop the API container if running
+   docker-compose stop api
+   # Or start only PostgreSQL and Seq
+   docker-compose up -d postgres seq
    ```
 
-3. **Configure database connections**
+2. **Database Setup**
+   - Connection strings in `src/WebApi/Configurations/database.json` and `hangfire.json` are pre-configured with `Host=localhost`
+   - On first run, migrations will automatically create the database schema
 
-   Update the connection strings in `src/WebApi/Configurations/`:
-   - `database.json` - PostgreSQL connection
-   - `hangfire.json` - Background job storage connection
-
-4. **Run the application**
+3. **Run from your IDE**
    ```bash
-   # Development with hot reload
-   dotnet watch run --project src/WebApi
-
-   # Or standard run
+   # From project root
    dotnet run --project src/WebApi
+
+   # Or with hot reload
+   dotnet watch run --project src/WebApi
    ```
 
-5. **Access the API**
+4. **Access the API**
    - **Swagger UI**: `https://localhost:5001/swagger`
    - **Health Checks**: `https://localhost:5001/api/health`
    - **Hangfire Dashboard**: `https://localhost:5001/hangfire`
+
+### Switching Between Docker and Local Development
+
+**From Docker to Local IDE:**
+1. Stop the API container: `docker-compose stop api`
+2. Keep PostgreSQL running: `docker-compose up -d postgres seq`
+3. Run from IDE - database connections will use `localhost`
+
+**From Local IDE to Docker:**
+1. Stop your IDE's debug session
+2. Start all services: `docker-compose up -d`
+3. API container will connect using Docker's internal network
+
+**Clean Database Reset:**
+```bash
+# If you encounter migration issues, reset the database
+docker exec postgres-api-starter psql -U postgres -c "DROP DATABASE IF EXISTS \"TenantDb\";"
+docker exec postgres-api-starter psql -U postgres -c "CREATE DATABASE \"TenantDb\";"
+# Migrations will run automatically on next application start
+```
 
 ### Testing
 
@@ -206,19 +242,23 @@ Access SEQ at: `http://localhost:5341`
 
 > **Note**: Newer SEQ versions require either authentication setup or explicit opt-out. The development command above disables authentication for local development convenience.
 
-### Docker Compose (Recommended)
+### Docker Compose Commands
 
-Use the provided `docker-compose.yml` for local development:
+Common Docker Compose operations:
 
 ```bash
 # Start all services
-docker-compose up -d
+cd deployments && docker-compose up -d
+
+# Start specific services
+docker-compose up -d postgres seq  # Just infrastructure
 
 # View logs
-docker-compose logs -f
+docker-compose logs -f api
 
-# Stop all services
-docker-compose down
+# Stop services
+docker-compose stop api  # Stop specific service
+docker-compose down      # Stop and remove all containers
 ```
 
 ## Configuration
