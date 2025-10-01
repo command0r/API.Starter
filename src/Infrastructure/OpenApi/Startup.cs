@@ -66,7 +66,6 @@ internal static class Startup
                 document.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor());
                 document.OperationProcessors.Add(new SwaggerGlobalAuthProcessor());
 
-
                 document.OperationProcessors.Add(new SwaggerHeaderAttributeProcessor());
 
             });

@@ -44,6 +44,7 @@ internal static class Startup
         {
             DbProviderKeys.Npgsql =>
                 hangfireConfig.UsePostgreSqlStorage(connectionString, config.GetSection("HangfireSettings:Storage:Options").Get<PostgreSqlStorageOptions>()),
+
             // Future SQL Server Support - Uncomment when needed
             // DbProviderKeys.SqlServer =>
             //     hangfireConfig.UseSqlServerStorage(connectionString, config.GetSection("HangfireSettings:Storage:Options").Get<SqlServerStorageOptions>()),

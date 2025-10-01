@@ -28,6 +28,7 @@ public class ConnectionStringSecurer : IConnectionStringSecurer
         return dbProvider?.ToLower() switch
         {
             DbProviderKeys.Npgsql => MakeSecureNpgsqlConnectionString(connectionString),
+
             // Future SQL Server Support - Uncomment when needed
             // DbProviderKeys.SqlServer => MakeSecureSqlConnectionString(connectionString),
             _ => connectionString
